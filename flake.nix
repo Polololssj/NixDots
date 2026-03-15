@@ -13,13 +13,20 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... } @ inputs: {
+outputs = { self, nixpkgs, ... } @ inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./configuration.nix
-      ];
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+            ./configuration.nix
+            {
+                nixpkgs.overlays = [
+                    (final: prev: {
+                        niri = inputs.niri.packages.x86_64-linux.niri;
+                    })
+                ];
+            }
+        ];
     };
-  };
+};
 }

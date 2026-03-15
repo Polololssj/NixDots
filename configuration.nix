@@ -142,8 +142,7 @@ in
     git
 
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-    inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri
-
+    
   ];
 
   fonts.packages = with pkgs; [
