@@ -140,6 +140,7 @@ in
     gnome-themes-extra
     waybar
     git
+    obsidian
 
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     
