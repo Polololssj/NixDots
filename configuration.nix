@@ -142,6 +142,7 @@ in
     git
     obsidian
     teams-for-linux
+    gh
 
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     
