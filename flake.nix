@@ -19,13 +19,7 @@ outputs = { self, nixpkgs, ... } @ inputs: {
         specialArgs = { inherit inputs; };
         modules = [
             ./configuration.nix
-            {
-                nixpkgs.overlays = [
-                    (final: prev: {
-                        niri = inputs.niri.packages.x86_64-linux.niri;
-                    })
-                ];
-            }
+            
         ];
     };
 };

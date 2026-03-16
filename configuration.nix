@@ -6,7 +6,7 @@ let
     cd /home/polololssj/dots/
     clear
     echo '=========================================='
-    echo '  ❄️  DEBUT DU REBUILD (FLAKE MODE)'
+    echo '  ❄️  DEBUT DU REBUILD'
     echo '=========================================='
     if sudo nixos-rebuild switch --flake .#nixos; then
         echo "✅ REBUILD REUSSI"
@@ -37,7 +37,7 @@ in
   ];
 
   # ============================================================================
-  # 2. BOOT & KERNEL (DÉMARRAGE)
+  # 2. BOOT & KERNEL 
   # ============================================================================
   boot.loader.limine.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -60,7 +60,7 @@ in
   };
 
   # ============================================================================
-  # 4. SERVICES SYSTÈME (Display, Audio, Impression)
+  # 4. SERVICES SYSTÈME
   # ============================================================================
   services.displayManager.ly.enable = true;
 
@@ -86,20 +86,20 @@ in
   };
 
   nixpkgs.config = {
-    allowUnfree = true; # Ça, tu l'as déjà sûrement mis
-    # Ajoute la ligne ci-dessous :
+    allowUnfree = true;
     permittedInsecurePackages = [
       "cisco-packet-tracer-8.2.2"
     ];
   };
 
   # ============================================================================
-  # 6. LOGICIELS & ENVIRONNEMENT (PACKAGES)
+  # 6. LOGICIELS & ENVIRONNEMENT
   # ============================================================================
   
   programs.niri.enable = true;
   virtualisation.vmware.host.enable = true;
   virtualisation.docker.enable = true;
+  
   programs.zsh = {
     enable = true;
     autosuggestions.enable = true;
@@ -141,6 +141,7 @@ in
     waybar
     git
     obsidian
+    teams-for-linux
 
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     
