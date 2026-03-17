@@ -99,7 +99,7 @@ in
   programs.niri.enable = true;
   virtualisation.vmware.host.enable = true;
   virtualisation.docker.enable = true;
-  
+
   programs.zsh = {
     enable = true;
     autosuggestions.enable = true;
