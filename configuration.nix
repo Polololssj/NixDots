@@ -143,6 +143,7 @@ in
     obsidian
     teams-for-linux
     gh
+    putty
 
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     
