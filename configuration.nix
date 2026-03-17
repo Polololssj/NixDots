@@ -144,6 +144,7 @@ in
     teams-for-linux
     gh
     putty
+    powershell
 
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     
