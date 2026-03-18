@@ -161,9 +161,8 @@ in
     putty
     powershell
     python3
-
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     
+    inputs.zen-browser.packages.${pkgs.system}.default
   ];
 
   fonts.packages = with pkgs; [
