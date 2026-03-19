@@ -96,7 +96,7 @@ in
   users.users.polololssj = {
     isNormalUser = true;
     description = "Patryk Kasprzak";
-    extraGroups = [ "networkmanager" "wheel" "video" "docker" "vmware" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "docker" "vmware" "dialout" ];
     shell = pkgs.zsh;
   };
 
