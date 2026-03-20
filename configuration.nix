@@ -161,6 +161,7 @@ in
     putty
     powershell
     python3
+    thonny
     
     inputs.zen-browser.packages.${pkgs.system}.default
   ];
