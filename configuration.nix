@@ -162,7 +162,7 @@ in
     powershell
     python3
     thonny
-    
+    nodejs_22
     
     inputs.zen-browser.packages.${pkgs.system}.default
   ];
