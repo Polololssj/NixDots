@@ -174,6 +174,7 @@ in
     python3
     thonny
     nodejs_22
+    flatpak
     
     inputs.zen-browser.packages.${pkgs.system}.default
   ];
