@@ -27,6 +27,7 @@ in
   # ============================================================================
   imports = [ 
     ./hardware-configuration.nix 
+    inputs.nix-flatpak.nixosModules.nix-flatpak
   ];
 
   system.stateVersion = "25.11";
@@ -74,6 +75,7 @@ in
   };
 
   services.printing.enable = true;
+  services.udisks2.enable = true;
 
   services.blueman.enable = true;
   hardware.bluetooth = {

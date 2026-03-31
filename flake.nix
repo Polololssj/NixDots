@@ -3,11 +3,13 @@
   
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
     
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     niri = {
       url = "github:Naxdy/niri";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,15 +25,18 @@ outputs = { self,
            nixpkgs,
            spicetify-nix,
            zen-browser,
+           nix-flatpak,
            ...
            } 
+
     @ inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
             ./configuration.nix
-            spicetify-nix.nixosModules.default            
+            spicetify-nix.nixosModules.default   
+            nix-flatpak.nixosModules.nix-flatpak         
         ];
     };
 };
