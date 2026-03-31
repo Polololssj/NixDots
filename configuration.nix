@@ -116,6 +116,7 @@ in
   programs.niri.enable = true;
   virtualisation.vmware.host.enable = true;
   virtualisation.docker.enable = true;
+  programs.nix-ld.enable = true;
 
   programs.zsh = {
     enable = true;
