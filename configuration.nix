@@ -76,8 +76,9 @@ in
 
   services.printing.enable = true;
   services.udisks2.enable = true;
-
+  services.flatpak.enable = true;
   services.blueman.enable = true;
+  
   hardware.bluetooth = {
   enable = true;
   powerOnBoot = true;
