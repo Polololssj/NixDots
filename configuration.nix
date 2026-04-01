@@ -176,6 +176,7 @@ in
     thonny
     nodejs_22
     flatpak
+    cmatrix
     
     inputs.zen-browser.packages.${pkgs.system}.default
   ];
