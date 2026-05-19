@@ -43,8 +43,7 @@ in
   # boot.loader.limine.enable = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-    
-
+  
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # ============================================================================
@@ -128,7 +127,6 @@ in
     syntaxHighlighting.enable = true;
   };
 
-
   programs.steam = {
   enable = true;
   remotePlay.openFirewall = true;
@@ -149,6 +147,7 @@ in
       name = "Rebuild Nix";
       desktopName = "rebuild Nix";
       exec = "kitty --title REBUILD_SYSTEM rebuild-system";
+      exec = "rebuild-system";
       icon = "system-software-update";
       type = "Application";
       categories = [ "System" ];
@@ -165,6 +164,7 @@ in
     fastfetch
     swaybg
     winboat
+    ciscoPacketTracer8
     docker-compose
     mako
     gnome-themes-extra
@@ -181,8 +181,6 @@ in
     flatpak
     cmatrix
     brightnessctl
-
-
     
     inputs.zen-browser.packages.${pkgs.system}.default
   ];
