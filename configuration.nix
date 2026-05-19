@@ -186,6 +186,7 @@ in
 
   (python3.withPackages (ps: with ps; [
     tkinter
+    openpyxl
   ]))
   ];
 
