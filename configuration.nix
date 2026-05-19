@@ -174,7 +174,6 @@ in
     gh
     putty
     powershell
-    python3
     thonny
     nodejs_22
     flatpak
@@ -182,6 +181,12 @@ in
     brightnessctl
     
     inputs.zen-browser.packages.${pkgs.system}.default
+
+
+
+  (python3.withPackages (ps: with ps; [
+    tkinter
+  ]))
   ];
 
   fonts.packages = with pkgs; [
