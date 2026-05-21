@@ -127,6 +127,12 @@ in
     syntaxHighlighting.enable = true;
   };
 
+  programs.micro = {
+    enable = true;
+    package = pkgs.micro;
+    plugins = with pkgs; [
+       
+  
   programs.steam = {
   enable = true;
   remotePlay.openFirewall = true;
@@ -162,7 +168,6 @@ in
     htop
     fastfetch
     swaybg
-    xfce.thunar
     winboat
     ciscoPacketTracer8
     docker-compose
