@@ -163,7 +163,7 @@ in
     fastfetch
     swaybg
     winboat
-    #ciscoPacketTracer8
+    ciscoPacketTracer8
     docker-compose
     mako
     gnome-themes-extra
