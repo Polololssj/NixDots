@@ -175,6 +175,7 @@ in
     nodejs_22
     flatpak
     cmatrix
+    parted
     brightnessctl
     
     inputs.zen-browser.packages.${pkgs.system}.default
