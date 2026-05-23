@@ -8,18 +8,20 @@ let
     echo '=========================================='
     echo '  ❄️  DEBUT DU REBUILD'
     echo '=========================================='
-    if sudo nixos-rebuild switch --flake .#nixos; then
+    if sudo nixos-rebuild switch --flake .#nixos;
+    then
         echo "✅ REBUILD REUSSI"
         echo ""
         echo "📦 Push des dotfiles sur GitHub..."
-        ${pkgs.git}/bin/git add . 
-        ${pkgs.git}/bin/git commit -m "update: ''$(date '+%Y-%m-%d %H:%M')" && ${pkgs.git}/bin/git push && echo "✅ GitHub à jour" || echo "⚠️  Rien à push"
+        ${pkgs.git}/bin/git add .
+        ${pkgs.git}/bin/git commit -m "update: ''$(date '+%Y-%m-%d %H:%M')" && ${pkgs.git}/bin/git push && echo "✅ GitHub à jour" ||
+        echo "⚠️  Rien à push"
     else
         echo "❌ ECHEC"
     fi
     echo "Appuie sur Entrée pour quitter."
     read
-'';
+  '';
 in
 {
   # ============================================================================
@@ -29,7 +31,6 @@ in
     ./hardware-configuration.nix 
     inputs.nix-flatpak.nixosModules.nix-flatpak
   ];
-
   system.stateVersion = "25.11";
 
   nix.nixPath = [ 
@@ -40,10 +41,8 @@ in
   # ============================================================================
   # 2. BOOT & KERNEL 
   # ============================================================================
-  # boot.loader.limine.enable = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # ============================================================================
@@ -81,16 +80,16 @@ in
   services.blueman.enable = true;
   
   hardware.bluetooth = {
-  enable = true;
-  powerOnBoot = true;
-  settings = {
-    General = {
-      Experimental = true;
-      FastConnectable = true;
-    };
-    Policy = {
-      AutoEnable = true;
-    };
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Experimental = true;
+        FastConnectable = true;
+      };
+      Policy = {
+        AutoEnable = true;
+      };
     };
   };
 
@@ -114,7 +113,6 @@ in
   # ============================================================================
   # 6. LOGICIELS & ENVIRONNEMENT
   # ============================================================================
-  
   programs.niri.enable = true;
   virtualisation.vmware.host.enable = true;
   virtualisation.docker.enable = true;
@@ -128,20 +126,18 @@ in
   };
 
   programs.steam = {
-  enable = true;
-  remotePlay.openFirewall = true;
-  dedicatedServer.openFirewall = true;
-  localNetworkGameTransfers.openFirewall = true;
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    localNetworkGameTransfers.openFirewall = true;
   };
 
-
   virtualisation.docker.rootless = {
-  enable = true;
-  setSocketVariable = true;
+    enable = true;
+    setSocketVariable = true;
   };
 
   environment.systemPackages = with pkgs; [
-    
     rebuild-script
     (makeDesktopItem {
       name = "Rebuild Nix";
@@ -151,10 +147,10 @@ in
       type = "Application";
       categories = [ "System" ];
     })
-    
 
     xwayland-satellite 
     fuzzel
+    unzip
     alacritty
     kitty
     vesktop
@@ -162,7 +158,7 @@ in
     htop
     fastfetch
     swaybg
-    xfce.thunar
+    thunar # Corrigé ici (plus de xfce.thunar)
     winboat
     ciscoPacketTracer8
     docker-compose
@@ -182,15 +178,12 @@ in
     brightnessctl
     
     inputs.zen-browser.packages.${pkgs.system}.default
+    ];    
 
 
-
-  (python3.withPackages (ps: with ps; [
-    tkinter
-    openpyxl
-  ]))
-  ];
-
+  # ============================================================================
+  # 7. POLICES & CONFIGURATIONS AVANCÉES
+  # ============================================================================
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
     noto-fonts-color-emoji
@@ -200,7 +193,6 @@ in
     XCURSOR_THEME = "Adwaita";
     XCURSOR_SIZE = "16";
   };
-  
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
