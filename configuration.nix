@@ -160,7 +160,7 @@ in
     swaybg
     thunar # Corrigé ici (plus de xfce.thunar)
     winboat
-    ciscoPacketTracer8
+    pkgs.cisco-packet-tracer_9
     docker-compose
     mako
     gnome-themes-extra
