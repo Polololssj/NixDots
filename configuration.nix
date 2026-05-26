@@ -149,6 +149,7 @@ in
     })
 
     xwayland-satellite 
+    python3
     fuzzel
     unzip
     alacritty
