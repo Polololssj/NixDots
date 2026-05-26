@@ -158,7 +158,7 @@ in
     htop
     fastfetch
     swaybg
-    thunar # Corrigé ici (plus de xfce.thunar)
+    thunar
     winboat
     pkgs.cisco-packet-tracer_9
     docker-compose
@@ -166,6 +166,7 @@ in
     gnome-themes-extra
     waybar
     git
+    vicinae
     obsidian
     teams-for-linux
     gh
