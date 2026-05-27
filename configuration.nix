@@ -150,6 +150,9 @@ in
 
     xwayland-satellite 
     python3
+    nixd
+    micro
+    alejandra
     fuzzel
     unzip
     alacritty
