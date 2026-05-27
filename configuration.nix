@@ -49,10 +49,10 @@ in
   # 3. RÉSEAU & LOCALISATION
   # ============================================================================
   networking.hostName = "nixos";
-  networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Brussels";
   i18n.defaultLocale = "fr_BE.UTF-8";
+  networking.networkmanager.enable = true;
   
   console.keyMap = "be-latin1";
   services.xserver.xkb = {
@@ -158,6 +158,7 @@ in
     unzip
     alacritty
     kitty
+    subnetcalc
     vesktop
     vscodium
     htop
@@ -196,7 +197,7 @@ in
     noto-fonts-color-emoji
   ];
 
-  environment.sessionVariables = {
+   environment.sessionVariables = {
     XCURSOR_THEME = "Adwaita";
     XCURSOR_SIZE = "16";
   };
