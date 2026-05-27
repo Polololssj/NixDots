@@ -149,6 +149,7 @@ in
     })
 
     xwayland-satellite 
+    git-filter-repo
     python3
     nixd
     micro
