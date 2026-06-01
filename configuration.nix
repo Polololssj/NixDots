@@ -183,6 +183,7 @@ in
     flatpak
     cmatrix
     parted
+    libreoffice
     brightnessctl
     
     inputs.zen-browser.packages.${pkgs.system}.default
