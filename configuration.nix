@@ -183,6 +183,7 @@ in
     flatpak
     cmatrix
     parted
+    spotify-tray
     libreoffice
     brightnessctl
     
