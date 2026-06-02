@@ -184,6 +184,7 @@ in
     cmatrix
     parted
     spotify-tray
+    spotify
     libreoffice
     brightnessctl
     
